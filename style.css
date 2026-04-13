@@ -1,0 +1,42 @@
+/* --- Ajustes generales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Le puse un fondo oscuro azulado/grisáceo para que combine con el estilo nocturno de tu video */
+    background-color: #0a0d14; 
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Centra el contenido verticalmente en la pantalla */
+}
+
+.contenedor-principal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- Estilos del contenedor del video --- */
+.contenedor-video-logo {
+    width: 100%;
+    max-width: 500px; /* Limita el tamaño en computadoras para que no se vea gigante */
+    border-radius: 12px; /* Suaviza las esquinas */
+    overflow: hidden; /* Hace que el video respete las esquinas redondeadas */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); /* Le da una sombra elegante para que resalte */
+}
+
+/* --- Estilos del video en sí --- */
+.contenedor-video-logo video {
+    width: 100%;
+    height: auto;
+    display: block; /* Quita un pequeño margen fantasma que a veces dejan los videos */
+    pointer-events: none; /* Hace la magia: bloquea el clic derecho y los controles del reproductor */
+}
