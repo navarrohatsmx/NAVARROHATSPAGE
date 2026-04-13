@@ -1,4 +1,3 @@
-/* --- Ajustes generales --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,37 +5,31 @@
 }
 
 body {
-    /* Le puse un fondo oscuro azulado/grisáceo para que combine con el estilo nocturno de tu video */
-    background-color: #0a0d14; 
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+    /* Fondo completamente negro */
+    background-color: #000; 
+    overflow: hidden; /* Oculta las barras de desplazamiento */
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Centra el contenido verticalmente en la pantalla */
 }
 
-.contenedor-principal {
+.contenedor-video-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    height: 100%;
+    z-index: -1; /* Lo pone detrás de cualquier otro contenido futuro */
 }
 
-/* --- Estilos del contenedor del video --- */
-.contenedor-video-logo {
+.contenedor-video-fondo video {
     width: 100%;
-    max-width: 500px; /* Limita el tamaño en computadoras para que no se vea gigante */
-    border-radius: 12px; /* Suaviza las esquinas */
-    overflow: hidden; /* Hace que el video respete las esquinas redondeadas */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); /* Le da una sombra elegante para que resalte */
-}
-
-/* --- Estilos del video en sí --- */
-.contenedor-video-logo video {
-    width: 100%;
-    height: auto;
-    display: block; /* Quita un pequeño margen fantasma que a veces dejan los videos */
-    pointer-events: none; /* Hace la magia: bloquea el clic derecho y los controles del reproductor */
+    height: 100%;
+    /* MAGIA: Hace que el video llene toda la pantalla sin deformarse, 
+       cortando los bordes si es necesario para el celular */
+    object-fit: contain; 
+    display: block;
+    pointer-events: none; /* Bloquea los controles del reproductor */
 }
